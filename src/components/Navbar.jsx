@@ -22,7 +22,7 @@ const Navbar = () => {
         <ul
           className={`md:flex ${
             isOpen ? 'flex ' : 'hidden'
-          } flex-col md:flex-row h-[50vh] md:h-[30px] items-center absolute md:relative bg-zinc-400 w-full md:w-auto top-0 justify-evenly`}
+          } flex-col md:flex-row h-[50vh] md:justify-between md:h-[30px] items-center absolute md:relative bg-zinc-400 w-full md:w-auto top-0 justify-evenly `}
         >
           <li className=" absolute top-4 right-2 md:hidden ">
             <p onClick={() => setIsOpen(false)}>close Menu</p>
