@@ -1,22 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
+  // State to manage the toggle for showing links
+  const [isOpen, setIsOpen] = useState(false)
+
+  // Function to toggle the state
+  const toggleMenu = () => {
+    setIsOpen(!isOpen)
+  }
+
   return (
     <>
-      <div className="w-[100%] h-[60px] fixed top-0 left-0 flex flex-row text-center items-center justify-evenly bg-zinc-400">
+      <div className="w-full h-16 fixed top-0 left-0 flex items-center justify-evenly bg-zinc-400 px-4">
         <div>
-          <h1>logo</h1>
+          <h1>Logo</h1>
         </div>
-        <ul className=" w-[200px] flex flex-row  text-center items-center justify-evenly">
-          <li>
-            <Link to="/">Home</Link>
+        <div className="md:hidden">
+          <button onClick={toggleMenu}>Menu</button>
+        </div>
+        <ul
+          className={`md:flex ${
+            isOpen ? 'flex' : 'hidden'
+          } flex-col md:flex-row items-center absolute md:relative bg-zinc-400 w-full md:w-auto top-0 justify-evenly`}
+        >
+          <li className="p-2">
+            <Link to="/" onClick={() => setIsOpen(false)}>
+              Home
+            </Link>
           </li>
-          <li>
-            <Link to="/about">About</Link>
+          <li className="p-2">
+            <Link to="/about" onClick={() => setIsOpen(false)}>
+              About
+            </Link>
           </li>
-          <li>
-            <Link to="/contact">Contact</Link>
+          <li className="p-2">
+            <Link to="/contact" onClick={() => setIsOpen(false)}>
+              Contact
+            </Link>
           </li>
         </ul>
       </div>
