@@ -1,20 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Home from './pages/Home.jsx'
-import About from './pages/About.jsx'
-import Contact from './pages/Contact.jsx'
-import NotFound from './pages/NotFound.jsx'
 
 const Navbar = () => {
   return (
     <>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/contact">Contact</Link>
-        </li>
-      </ul>
+      <div className="w-[100%] h-[60px] fixed top-0 left-0 flex flex-row text-center items-center justify-evenly bg-zinc-400">
+        <div>
+          <h1>logo</h1>
+        </div>
+        <ul className=" w-[200px] flex flex-row  text-center items-center justify-evenly">
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+        </ul>
+      </div>
     </>
   )
 }
